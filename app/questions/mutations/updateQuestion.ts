@@ -5,6 +5,11 @@ import { z } from "zod"
 const UpdateQuestion = z.object({
   id: z.number(),
   text: z.string(),
+  choices: z.array(
+    z.object({
+      text: z.string(),
+    })
+  ),
 })
 
 export default resolver.pipe(
